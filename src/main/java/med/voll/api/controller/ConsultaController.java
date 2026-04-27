@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("consulta")
+@RequestMapping("consultas")
 public class ConsultaController {
 
     @Autowired
@@ -21,9 +21,9 @@ public class ConsultaController {
     @Transactional
     public ResponseEntity reservar(@RequestBody @Valid DatosReservaConsulta datos) {
         System.out.println("informacion: " + datos);
-        reserva.reservar(datos);
+        var detalleConsulta = reserva.reservar(datos);
 
-        return ResponseEntity.ok(new DatosDetalleConsulta(null, null, null, null));
+        return ResponseEntity.ok(detalleConsulta);
     }
 
     @DeleteMapping
@@ -32,5 +32,7 @@ public class ConsultaController {
         reserva.cancelar(datos);
         return ResponseEntity.noContent().build();
     }
+
+
 
 }

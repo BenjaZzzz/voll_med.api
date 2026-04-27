@@ -3,7 +3,6 @@ package med.voll.api.domain.consulta.validaciones;
 import med.voll.api.domain.ValidationException;
 import med.voll.api.domain.consulta.ConsultaRepository;
 import med.voll.api.domain.consulta.DatosReservaConsulta;
-import med.voll.api.domain.paciente.PacienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
