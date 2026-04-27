@@ -12,9 +12,9 @@ public class UsuarioService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public void registrarUsuario(DatosAutenticacion datos){
-        System.out.println("Contrasenia: " + datos.contrasena());
-        String passwordHasheado = passwordEncoder.encode(datos.contrasena());
+    public void registrarUsuario(DatosAutenticacionUsuario datos){
+        System.out.println("Contrasenia: " + datos.clave());
+        String passwordHasheado = passwordEncoder.encode(datos.clave());
 
         Usuario nuevoUsuario = new Usuario(datos.login(), passwordHasheado);
         repository.save(nuevoUsuario);
